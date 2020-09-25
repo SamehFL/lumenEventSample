@@ -19,7 +19,7 @@ $router->get('/', function () use ($router) {
 
 $router->post('register','UserController@register');
 
-$router->get('viewUserManipulationLog','UserController@viewUserManipulationLog');
+
 
 $router->group([
     'middleware' => 'auth:api'
@@ -28,5 +28,6 @@ $router->group([
     $router->post('logout','UserController@logout');
     $router->get('userInfo','UserController@show');
     $router->delete('delete[/{id}]','UserController@destroy');
+    $router->get('viewUserManipulationLog','UserController@viewUserManipulationLog');
 
 });
